@@ -1,13 +1,19 @@
-public class HowMany {
-
+import java.util.Scanner;
+public class MaxMin {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        // number of command-line arguments
-        int n = args.length;
+        int max = sc.nextInt();
+        int min = max;
 
-        // output message
-        System.out.print("You entered " + n + " command-line argument");
-        if (n == 1) System.out.println(".");
-        else        System.out.println("s.");
+        while (sc.hasNextInt()) {
+            int value = sc.nextInt();
+            if (value > max) max = value;
+            if (value < min) min = value;
+        }
+
+        sc.close();
+
+        System.out.println("maximum = " + max + ", minimum = " + min);
     }
 }
